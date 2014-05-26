@@ -1,4 +1,4 @@
-Loda - an Array helper
+Loda - an Array helper class
 ====
 
 Loda is a simple helper class for interacting with arrays as objects.
