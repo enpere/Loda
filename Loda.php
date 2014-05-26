@@ -1,6 +1,6 @@
-<?php
-
-class Loda implements ArrayAccess, JsonSerializable, Countable
+<?php namespace Loda;
+use Closure;
+class Loda implements \ArrayAccess, \JsonSerializable, \Countable
 {
     /**
      * Collection
