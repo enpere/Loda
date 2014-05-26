@@ -36,7 +36,7 @@ class Loda implements ArrayAccess, JsonSerializable, Countable
         return new Loda(array_filter($this->loda, $callback));
     }
 
-    public function push($value, $key = false)
+    public function put($value, $key = false)
     {
         if(!$key)
         {
@@ -46,11 +46,32 @@ class Loda implements ArrayAccess, JsonSerializable, Countable
         }
     }
 
+    public function map(Closure $callback)
+    {
+        return new Loda(array_map($callback, $this->loda));
+    }
+
+
+    public function pick($key)
+    {
+       $chosen = null;
+       if($this->offsetExists($key))
+       {
+          $chosen = $this->loda[$key];
+          unset($this->loda[$key]);
+       }
+       return $chosen;
+    }
+
     public function all()
     {
        return $this->loda;
     }
 
+    public function has($key)
+    {
+        return array_key_exists($key, $this->loda);
+    }
     public function toJson()
     {
         return json_encode($this->loda);
@@ -61,16 +82,17 @@ class Loda implements ArrayAccess, JsonSerializable, Countable
         return $this->loda;
     }
 
+
     public function offsetExists($offset)
     {
-        return isset($this->loda[$offset]);
+        return $this->has($offset);
     }
 
     public function offsetGet($offset)
     {
-        if($this->offsetExists($offset))
+        if($this->has($offset))
         {
-            return $this->loda($offset);
+            return $this->loda[$offset];
         }
     }
 
@@ -81,7 +103,7 @@ class Loda implements ArrayAccess, JsonSerializable, Countable
 
     public function offsetUnset($offset)
     {
-        if($this->offsetExists($offset))
+        if($this->has($offset))
         {
             unset($this->loda[$offset]);
         }
