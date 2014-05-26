@@ -1,15 +1,9 @@
-<?php namespace Loda;
-
-use ArrayAccess;
-use Closure;
-use Countable;
-use JsonSerializable;
+<?php
 
 class Loda implements ArrayAccess, JsonSerializable, Countable
 {
     /**
      * Collection
-     *
      * @var [Array]
      */
     private $loda = [];
@@ -52,13 +46,22 @@ class Loda implements ArrayAccess, JsonSerializable, Countable
     }
 
 
+    public function forget($key)
+    {
+        if($this->pick($key) !== null)
+        {
+           $picked =  $this->pick($key);
+           unset($this[$key]);
+        }
+        return $picked;
+    }
+
     public function pick($key)
     {
        $chosen = null;
        if($this->offsetExists($key))
        {
           $chosen = $this->loda[$key];
-          unset($this->loda[$key]);
        }
        return $chosen;
     }
