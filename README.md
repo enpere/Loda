@@ -21,4 +21,4 @@ Loda is a simple helper class for interacting with arrays as objects.
   * ~~Map~~
   * Walk
   * ~~empty array~~
-  * 
+  * Documentation
