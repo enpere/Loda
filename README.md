@@ -12,10 +12,12 @@ Loda is a simple helper class for interacting with arrays as objects.
   * Pick
   * Has
   * Map
+  * Clear
 
 
 ## Todo
 
+  * Unit test
   * ~~Map~~
   * Walk
   * ~~empty array~~
