@@ -1,0 +1,19 @@
+{
+    "name": "enpere/loda",
+    "description": "array class",
+    "authors": [
+        {
+            "name": "Jens Aronsson",
+            "email": "jensarons@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Loda\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}
