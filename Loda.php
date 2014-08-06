@@ -60,12 +60,12 @@ class Loda implements \ArrayAccess, \JsonSerializable, \Countable {
 
     public function pick($key)
     {
-       $chosen = null;
+       $choosen = null;
        if($this->offsetExists($key))
        {
-          $chosen = $this->loda[$key];
+          $choosen = $this->loda[$key];
        }
-       return $chosen;
+       return $choosen;
     }
 
     public function all()
