@@ -10,10 +10,11 @@ class Loda implements \ArrayAccess, \JsonSerializable, \Countable {
      */
     private $loda = [];
 
-    public function __construct(Array $loda)
+    public function __construct(Array $loda = [])
     {
         $this->loda = $loda;
     }
+
 
     public function shift()
     {
@@ -50,9 +51,11 @@ class Loda implements \ArrayAccess, \JsonSerializable, \Countable {
 
     public function forget($key)
     {
+        $picked = null;
+
         if($this->pick($key) !== null)
         {
-           $picked =  $this->pick($key);
+           $picked = $this->pick($key);
            unset($this[$key]);
         }
         return $picked;
@@ -77,6 +80,7 @@ class Loda implements \ArrayAccess, \JsonSerializable, \Countable {
     {
         return array_key_exists($key, $this->loda);
     }
+    
     public function toJson()
     {
         return json_encode($this->loda);
