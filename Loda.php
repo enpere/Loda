@@ -10,7 +10,7 @@ class Loda implements \ArrayAccess, \JsonSerializable, \Countable {
      */
     private $loda = [];
 
-    public function __construct(Array $loda)
+    public function __construct(Array $loda = [])
     {
         $this->loda = $loda;
     }
