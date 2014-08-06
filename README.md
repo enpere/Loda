@@ -17,7 +17,7 @@ Loda is a simple helper class for interacting with arrays as objects.
 
 ## Todo
 
-  * Unit test
+  * 100% covered Unit tests
   * ~~Map~~
   * Walk
   * ~~empty array~~
