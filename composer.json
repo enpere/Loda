@@ -1,14 +1,18 @@
 {
     "name": "enpere/loda",
+    "type": "library",
     "description": "array class",
-    "authors": [
-        {
-            "name": "Jens Aronsson",
-            "email": "jensarons@gmail.com"
-        }
-    ],
+    "keywords": ["array", "utility", "helper"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Jens Aronsson",
+        "email": "jensarons@gmail.com"
+    }],
     "require": {
 
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0.0"
     },
     "autoload": {
         "psr-4": {
